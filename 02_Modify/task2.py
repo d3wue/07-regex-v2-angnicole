@@ -2,9 +2,13 @@ import re
 
 #reg = re.compile("([A-Z][a-z]+) ([A-Z]*) ([A-Z][a-z]+)")
 reg = re.compile("([A-Z][a-z]*\. )*([A-Z][a-z]+) ([A-Z]*[a-z]*)\.? ?([A-Z][a-z]+)(,? \w*)*")
-
+#reg= re.compile("(\w*.?,? ?)*")
 m = reg.match("Uwe Meier")
-print(m)
+if m:
+    print(m.group(0))
+else:
+    print(m)
+
 m = reg.match("Prof. Dr. Chris C Schmidt")
 print(m)
 m = reg.match("Hanna J Gruber, PhD")
